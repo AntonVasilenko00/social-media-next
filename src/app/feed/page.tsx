@@ -2,6 +2,7 @@ import React, { HTMLProps } from 'react'
 import { twMerge } from 'tailwind-merge'
 import Image from 'next/image'
 import classNames from 'classnames'
+import { NextPage } from 'next'
 
 import SearchBar from '@/components/SearchBar'
 
@@ -17,10 +18,7 @@ interface ContactsBarProps extends HTMLProps<HTMLDivElement> {
   contacts: Contact[]
 }
 
-export const ContactsBar: React.FC<ContactsBarProps> = ({
-  contacts,
-  ...props
-}) => {
+const ContactsBar: React.FC<ContactsBarProps> = ({ contacts, ...props }) => {
   return (
     <div {...props}>
       <ul className="flex gap-2 overflow-x-scroll no-scrollbar">
@@ -67,9 +65,9 @@ const contacts: Contact[] = [
   { name: 'Alex', isOnline: true },
 ]
 
-const Feed: React.FC<HTMLProps<HTMLDivElement>> = (props) => {
+const Feed: NextPage = () => {
   return (
-    <div {...props} className={twMerge('w-full flex gap-2 items-center')}>
+    <div className={twMerge('w-full flex gap-2 items-center')}>
       <section className="bg-white rounded-md p-2 w-2/3 max-sm:w-full">
         <SearchBar className="m-2" />
         <ContactsBar contacts={contacts} className="m-1" />

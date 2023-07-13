@@ -2,6 +2,7 @@ import React, { HTMLProps } from 'react'
 import { twMerge } from 'tailwind-merge'
 import Image from 'next/image'
 import classNames from 'classnames'
+import { NextPage } from 'next'
 
 import SearchBar from '@/components/SearchBar'
 
@@ -22,7 +23,7 @@ interface ContactProfilePictureProps extends HTMLProps<HTMLDivElement> {
   iconSize?: number
 }
 
-export const ContactProfilePicture: React.FC<ContactProfilePictureProps> = ({
+const ContactProfilePicture: React.FC<ContactProfilePictureProps> = ({
   contact,
   iconSize = 64,
   ...props
@@ -47,10 +48,7 @@ export const ContactProfilePicture: React.FC<ContactProfilePictureProps> = ({
   )
 }
 
-export const ContactsBar: React.FC<ContactsBarProps> = ({
-  contacts,
-  ...props
-}) => {
+const ContactsBar: React.FC<ContactsBarProps> = ({ contacts, ...props }) => {
   return (
     <div {...props}>
       <ul className="flex gap-2 overflow-x-scroll no-scrollbar">
@@ -101,7 +99,7 @@ interface ChatsProps extends HTMLProps<HTMLDivElement> {
   chats: Chat[]
 }
 
-export const Chats: React.FC<ChatsProps> = ({ chats, ...props }) => {
+const Chats: React.FC<ChatsProps> = ({ chats, ...props }) => {
   return (
     <div>
       <ul>
@@ -141,9 +139,9 @@ const chats: Chat[] = contacts.map((contact) => ({
   },
 }))
 
-const MessagerPage: React.FC<HTMLProps<HTMLDivElement>> = (props) => {
+const MessagerPage: NextPage = () => {
   return (
-    <div {...props} className={twMerge('w-full flex gap-2')}>
+    <div className={twMerge('w-full flex gap-2')}>
       <section className="bg-white rounded-md p-2 w-2/3 max-md:w-full">
         <SearchBar className="m-2" />
         <ContactsBar contacts={contacts} className="m-1" />
