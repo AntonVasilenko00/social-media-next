@@ -2,13 +2,15 @@ import React, { HTMLProps } from 'react'
 import Image from 'next/image'
 import classNames from 'classnames'
 
-import { ProfileIcon } from '@/lib/icons/vk-icons'
-import { Contact } from '@/lib/types'
+import { ProfileIcon } from '@/shared/icons/vk-icons'
+import { Contact } from '@/shared/types'
 
-export interface ContactProfilePictureProps extends HTMLProps<HTMLDivElement> {
+interface ContactProfilePictureProps extends HTMLProps<HTMLDivElement> {
   contact: Contact
   iconSize?: number
+  isOnline?: boolean
 }
+
 const ContactProfilePicture: React.FC<ContactProfilePictureProps> = ({
   contact,
   iconSize = 64,

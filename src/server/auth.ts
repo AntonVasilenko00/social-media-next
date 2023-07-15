@@ -2,6 +2,8 @@ import { NextAuthOptions } from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
 import VKProvider from 'next-auth/providers/vk'
 
+const AUTHORIZED_REDIRECT_PAGE = '/feed'
+
 export const authOptions: NextAuthOptions = {
   session: {
     strategy: 'jwt',
@@ -17,8 +19,8 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   callbacks: {
-    redirect: async ({ url, baseUrl }) => {
-      return '/feed'
+    redirect: async () => {
+      return AUTHORIZED_REDIRECT_PAGE
     },
   },
 }

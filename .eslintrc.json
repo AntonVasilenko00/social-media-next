@@ -6,6 +6,7 @@
     "no-relative-import-paths"
   ],
   "rules": {
+    "no-unused-vars": "warn",
     "padding-line-between-statements": [
       "error",
       {

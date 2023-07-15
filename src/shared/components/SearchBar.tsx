@@ -1,7 +1,9 @@
 import React, { HTMLProps } from 'react'
 import { twMerge } from 'tailwind-merge'
 
-import { SearchIcon } from '@/lib/icons/vk-icons'
+import { SearchIcon } from '@/shared/icons/vk-icons'
+
+const SEARCH_ICON_SIZE = 16
 
 const SearchBar: React.FC<HTMLProps<HTMLInputElement>> = (props) => {
   return (
@@ -11,11 +13,15 @@ const SearchBar: React.FC<HTMLProps<HTMLInputElement>> = (props) => {
         props.className,
       )}
     >
-      <SearchIcon className="text-vk-icon" width={16} height={16} />
+      <SearchIcon
+        className="text-vk-icon"
+        width={SEARCH_ICON_SIZE}
+        height={SEARCH_ICON_SIZE}
+      />
       <input
         placeholder="Search"
-        type="text"
         {...props}
+        type="text"
         className="bg-transparent px-2 py-1 outline-none w-full"
       />
     </div>

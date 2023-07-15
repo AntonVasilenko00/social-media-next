@@ -2,10 +2,9 @@ import { Roboto } from 'next/font/google'
 import '@/app/styles/globals.css'
 import classNames from 'classnames'
 
-import GlobalProvider from '@/providers/'
-
-import Header from '@/components/Header'
-import SidebarNav from '@/components/SidebarNav'
+import GlobalProvider from '@/shared/providers'
+import Header from '@/shared/components/layout/Header'
+import SidebarNav from '@/shared/components/layout/Sidebar'
 
 import type { Metadata } from 'next'
 
@@ -25,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={classNames(font.className, 'font-light')}>
         <GlobalProvider>
           <Header />

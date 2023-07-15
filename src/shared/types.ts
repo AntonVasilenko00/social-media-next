@@ -1,4 +1,4 @@
-import { HTMLProps, SVGProps } from 'react'
+import { SVGProps } from 'react'
 
 export type IconProps = SVGProps<SVGSVGElement>
 export type Icon = React.FC<IconProps>
@@ -22,10 +22,6 @@ export interface Chat {
   lastMessage: Message
 }
 
-export interface ChatsProps extends HTMLProps<HTMLDivElement> {
-  chats: Chat[]
-}
-
 export type Author = Contact | Group
 
 export interface Story {
@@ -40,7 +36,7 @@ export interface Asset {
 
 export interface Post {
   author: Author
-  datetimePosted: Date
+  publicationDatetime: Date
   text: string
   likesNumber: number
   commentsNumber: number
