@@ -1,51 +1,16 @@
 import React, { HTMLProps } from 'react'
 import { twMerge } from 'tailwind-merge'
 import Image from 'next/image'
-import classNames from 'classnames'
 import { NextPage } from 'next'
 
 import SearchBar from '@/components/SearchBar'
+import ContactProfilePicture from '@/components/ContactProfilePicture'
 
 import { ProfileIcon } from '@/lib/icons/vk-icons'
-
-interface Contact {
-  name: string
-  imageUrl?: string
-  isOnline: boolean
-}
+import { Contact, Chat, ChatsProps } from '@/lib/types'
 
 interface ContactsBarProps extends HTMLProps<HTMLDivElement> {
   contacts: Contact[]
-}
-
-interface ContactProfilePictureProps extends HTMLProps<HTMLDivElement> {
-  contact: Contact
-  iconSize?: number
-}
-
-const ContactProfilePicture: React.FC<ContactProfilePictureProps> = ({
-  contact,
-  iconSize = 64,
-  ...props
-}) => {
-  return (
-    <div {...props}>
-      {contact.imageUrl ? (
-        <Image src={contact.imageUrl} alt={contact.name} />
-      ) : (
-        <ProfileIcon
-          width={iconSize}
-          height={iconSize}
-          className={classNames(
-            {
-              'text-vk-text-primary': contact.isOnline,
-            },
-            'text-vk-icon',
-          )}
-        />
-      )}
-    </div>
-  )
 }
 
 const ContactsBar: React.FC<ContactsBarProps> = ({ contacts, ...props }) => {
@@ -81,23 +46,6 @@ const contacts: Contact[] = [
   { name: 'Alex', isOnline: true },
   { name: 'Alex', isOnline: true },
 ]
-
-interface Group extends Contact {}
-
-interface Message {
-  author: Contact
-  text: string
-  date: Date
-}
-
-interface Chat {
-  contact: Contact | Group
-  lastMessage: Message
-}
-
-interface ChatsProps extends HTMLProps<HTMLDivElement> {
-  chats: Chat[]
-}
 
 const Chats: React.FC<ChatsProps> = ({ chats, ...props }) => {
   return (

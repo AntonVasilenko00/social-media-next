@@ -2,7 +2,7 @@ import React, { HTMLProps } from 'react'
 import classNames from 'classnames'
 import { twMerge } from 'tailwind-merge'
 
-import { ptSans } from '@/components/Navbar'
+import { ptSans } from '@/components/Header'
 
 import { VKLogoIcon } from '@/lib/icons/vk-icons'
 

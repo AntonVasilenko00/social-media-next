@@ -13,9 +13,9 @@ const SearchBar: React.FC<HTMLProps<HTMLInputElement>> = (props) => {
     >
       <SearchIcon className="text-vk-icon" width={16} height={16} />
       <input
-        {...props}
         placeholder="Search"
         type="text"
+        {...props}
         className="bg-transparent px-2 py-1 outline-none w-full"
       />
     </div>

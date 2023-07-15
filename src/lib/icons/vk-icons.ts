@@ -20,6 +20,12 @@ import {
   Icon28Notifications as NotificationIcon,
   Icon24MusicOutline as MusicIcon,
   Icon12ChevronDownSmall as ChevronDownIcon,
+  Icon24Fire as FireIcon,
+  Icon16MoreHorizontal as HorizontalDotsMenuIcon,
+  Icon24LikeOutline as LikeIcon,
+  Icon24CommentOutline as CommentIcon,
+  Icon24ShareOutline as ShareIcon,
+  Icon24View as ViewsIcon,
 } from '@vkontakte/icons/'
 
 export {
@@ -42,4 +48,10 @@ export {
   MusicIcon,
   ChevronDownIcon,
   SearchIcon,
+  FireIcon,
+  HorizontalDotsMenuIcon,
+  LikeIcon,
+  CommentIcon,
+  ShareIcon,
+  ViewsIcon,
 }
